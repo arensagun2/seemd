@@ -1,6 +1,8 @@
 import { printOutput } from "./functions/util/printOutput.js";
 import { addition, division, multiplication, subtraction } from "./functions/math/basics.js";
 import { help } from "./functions/helpers/help.js";
+import { clear } from "./functions/helpers/clear.js";
+import { pemdas } from "./functions/math/pemdas.js";
 
 export async function getCommand(cmdLine, debug) {
     if (cmdLine == undefined || cmdLine == "" || cmdLine.length <= 0)
@@ -30,6 +32,12 @@ export async function getCommand(cmdLine, debug) {
             break;
         case "help":
             await help(parameters[0]);
+            break;
+        case "clear":
+            await clear()
+            break;
+        case "pemdas":
+            await pemdas(parameters, debug)
             break;
         default:
             printOutput("out", `Command '${command}' not found`)

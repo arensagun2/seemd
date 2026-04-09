@@ -5,6 +5,7 @@ import { printOutput } from "./src/functions/util/printOutput.js";
 const debug = true;
 const inputForm = document.getElementById('inputEntered');
 
+printOutput("out", "Welcome to SeeMD")
 if (debug)
     console.log(inputForm ? "Found inputForm ID" : "Error: inputForm not found");
 
